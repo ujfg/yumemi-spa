@@ -1,11 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { ResusAxios } from './lib/axios';
+import logo from './logo.svg'
+import './App.css'
+import { ResusAxios } from './lib/axios'
 
-function App() {
+function App () {
   const handleClick = () => {
-    ResusAxios.get('api/v1/prefectures').then((response) => {console.log(response.data)})
+    ResusAxios
+      .get('api/v1/prefectures')
+      .then((response) => { console.log(response.data) })
+      .catch(err => {
+        console.log("err:", err);
+      })
   }
   return (
     <div className="App">
@@ -25,7 +29,7 @@ function App() {
         <button type='button' onClick={handleClick}>button</button>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
