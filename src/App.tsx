@@ -1,8 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { ResusAxios } from './lib/axios';
 
 function App() {
+  const handleClick = () => {
+    ResusAxios.get('api/v1/prefectures').then((response) => {console.log(response.data)})
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +22,7 @@ function App() {
         >
           Learn React
         </a>
+        <button type='button' onClick={handleClick}>button</button>
       </header>
     </div>
   );
