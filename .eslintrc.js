@@ -1,13 +1,16 @@
 module.exports = {
-  env: {
+  root: true, // ここより上位の設定探さなくていいよ
+  env: { // どこの環境で実行するか(グローバル変数の中身が変わる)
     browser: true,
     es2021: true,
   },
-  extends: [
+  extends: [ // これらルールで拡張する(下に行くほど上書き、prettierとeslintの競合対策)
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
+    'prettier/@typescript-eslint',
+    'prettier/react'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
