@@ -12,8 +12,8 @@ module.exports = {
     'prettier/@typescript-eslint',
     'prettier/react'
   ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
+  parser: '@typescript-eslint/parser', // TypeScriptを扱えるようにするには、TypeScript用のパーサー(@typescript-eslint/parser)をインストールして指定する必要がある。
+  parserOptions: { // どのECMAScriptを対象にするか、JSXコードを記述するか、など
     ecmaFeatures: {
       jsx: true,
     },
@@ -22,9 +22,9 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
+  plugins: [ // eslintのプラグインを利用する場合はインストールしてここに記述。eslint-plugin というプレフィックスは省略可
+    'react',  // means eslint-plugin-react
+    '@typescript-eslint', // means @typescript-eslint/eslint-plugin
   ],
   "ignorePatterns": [
     ".eslintrc.js"
