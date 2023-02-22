@@ -9,8 +9,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
-    'prettier/@typescript-eslint',
-    'prettier/react'
   ],
   parser: '@typescript-eslint/parser', // TypeScriptを扱えるようにするには、TypeScript用のパーサー(@typescript-eslint/parser)をインストールして指定する必要がある。
   parserOptions: { // どのECMAScriptを対象にするか、JSXコードを記述するか、など
