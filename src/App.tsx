@@ -1,6 +1,7 @@
 import './App.css';
 import { ResusAxios } from './lib/axios';
 import { AppRoutes } from './routes';
+import { ChakraProvider } from '@chakra-ui/react'
 import { AppProvider } from './providers/app';
 
 export function App() {
@@ -14,9 +15,11 @@ export function App() {
       });
   };
   return (
-    <AppProvider>
-      <AppRoutes />
-    </AppProvider>
+    <ChakraProvider>
+      <AppProvider>
+        <AppRoutes />
+      </AppProvider>
+    </ChakraProvider>
   );
 }
 
